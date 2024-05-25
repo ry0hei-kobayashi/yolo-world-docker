@@ -62,10 +62,10 @@ RUN pip3 install --upgrade pip \
 RUN cd / && git clone --recursive https://github.com/AILab-CVC/YOLO-World.git
 WORKDIR /YOLO-World
 
-RUN apt install unzip
-RUN mkdir weights && curl -o weights/yolo_world_v2_s_obj365v1_goldg_pretrain-55b943ea.pth -L https://huggingface.co/wondervictor/YOLO-World/resolve/main/yolo_world_v2_s_obj365v1_goldg_pretrain-55b943ea.pth
-RUN mkdir -p data/coco/lvis && curl -o data/coco/lvis/lvis_v1_minival_inserted_image_name.json -L https://huggingface.co/GLIPModel/GLIP/blob/main/lvis_v1_minival_inserted_image_name.json
-RUN cd data/coco/ && wget http://images.cocodataset.org/zips/val2017.zip  && unzip val2017.zip
+#RUN apt install unzip
+#RUN mkdir weights && curl -o weights/yolo_world_v2_s_obj365v1_goldg_pretrain-55b943ea.pth -L https://huggingface.co/wondervictor/YOLO-World/resolve/main/yolo_world_v2_s_obj365v1_goldg_pretrain-55b943ea.pth
+#RUN mkdir -p data/coco/lvis && curl -o data/coco/lvis/lvis_v1_minival_inserted_image_name.json -L https://huggingface.co/GLIPModel/GLIP/blob/main/lvis_v1_minival_inserted_image_name.json
+#RUN cd data/coco/ && wget http://images.cocodataset.org/zips/val2017.zip  && unzip val2017.zip
 
 RUN chmod 775 tools/dist_train.sh
 RUN apt install python-is-python3

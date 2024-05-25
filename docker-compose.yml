@@ -25,8 +25,8 @@ services:
               count: 1
               capabilities: [gpu]
 
-    #command: ./tools/dist_train.sh configs/pretrain/yolo_world_v2_s_vlpan_bn_2e-3_100e_4x8gpus_obj365v1_goldg_train_1280ft_lvis_minival.py 8 --amp
-    command: python3 demo/image_demo.py configs/pretrain/yolo_world_v2_s_vlpan_bn_2e-3_100e_4x8gpus_obj365v1_goldg_train_lvis_minival.py weights/yolo_world_v2_s_obj365v1_goldg_pretrain-55b943ea.pth data/lvis_val2017/val2017/ 'person,dog,cat' --topk 100 --threshold 0.25 --output-dir out
+    #command: python3 demo/image_demo.py configs/pretrain/yolo_world_v2_s_vlpan_bn_2e-3_100e_4x8gpus_obj365v1_goldg_train_lvis_minival.py weights/yolo_world_v2_s_obj365v1_goldg_pretrain-55b943ea.pth data/lvis_val2017/val2017/ 'person,dog,cat' --topk 100 --threshold 0.25 --output-dir out
+    command: ./tools/dist_train.sh configs/pretrain/yolo_world_v2_s_vlpan_bn_2e-3_100e_4x8gpus_obj365v1_goldg_train_1280ft_lvis_minival.py 8 --amp
     #command: nvidia-smi -l
 
     
